@@ -1,6 +1,7 @@
 {
     "name": "remidalmeida/c4w_ecotaxpatch",
     "description": "Ecotax Patch for prestashop",
+    "homepage": "https://github.com/remidalmeida/c4w_ecotaxpatch.git",
     "authors": [
         {
             "name": "Rémi d'Almeida",
