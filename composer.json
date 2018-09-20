@@ -1,0 +1,25 @@
+{
+    "name": "remidalmeida/c4w_ecotaxpatch",
+    "description": "Ecotax Patch for prestashop",
+    "authors": [
+        {
+            "name": "Rémi d'Almeida",
+            "email": "remi.dalmeida@creation4web.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "EcotaxPatch\\": "src/"
+        },
+        "exclude-from-classmap": []
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "type": "prestashop-module",
+    "author": "PrestaShop",
+    "license": "AFL-3.0"
+}
