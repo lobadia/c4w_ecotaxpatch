@@ -28,8 +28,6 @@ if (!defined('_PS_VERSION_')) {
     exit;
 }
 
-use EcotaxPatch\Repository\ProductRepository;
-
 class C4w_EcotaxPatch extends Module
 {
     protected $config_form = false;
@@ -220,9 +218,11 @@ class C4w_EcotaxPatch extends Module
 
     public function hookDisplayAdminProductsPriceStepBottom($hookParams)
     {
-//        $connection = $this->get('database_connection');
-//        $repo = new ProductRepository($connection,'ps_');
-//        $product = $repo->findAllbyLangId(1);
+        if ($this->isSymfonyContext()) {
+            //$product_repository = $this->get('product_repository')->findAllbyLangId(1);
+            $em = $this->get('doctrine.orm.entity_manager');
+            $test ='2';
+        }
 
         return 'test';
     }
