@@ -1,8 +1,16 @@
-parameters:
-    hello_world: "Hello world!"
-
 services:
-    product_repository:
+    ecotax_product_repository:
         public: true
-        class: EcotaxPatch\Repository\ProductRepository
+        class: EcotaxPatch\Repository\ProductEcotaxRepository
         arguments: ['@doctrine.dbal.default_connection', '%database_prefix%']
+
+    form.type.product.ecotax:
+        class: EcotaxPatch\Form\Admin\Product\ProductEcotax
+        arguments:
+            - "@translator"
+            - "@prestashop.adapter.data_provider.tax"
+            - "@prestashop.adapter.legacy.context"
+        parent: 'form.type.common_type'
+        public: true
+        tags:
+        - { name: form.type }

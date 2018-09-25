@@ -1,0 +1,31 @@
+<div class="col-md-12">
+    <div class="row mb-3">
+        <div class="col-md-12">
+            <h2>
+                {{ 'Ecotax'|trans({}, 'Admin.Catalog.Feature') }}
+                <span class="help-box" data-toggle="popover"
+                      data-content="{{ "When the ecotax patch is activated this field remplaces the previous one."|trans({}, 'Admin.Catalog.Help') }}" ></span>
+            </h2>
+        </div>
+        <div class="col-xl-2 col-lg-3 form-group">
+
+            <label class="form-control-label">{{ form.ecotax_taxincl.vars.label|raw }}</label>
+            {{ form_errors(form.ecotax_taxincl) }}
+            {{ form_widget(form.ecotax_taxincl) }}
+            <script type="text/javascript">
+                var ps_ecotax = jQuery("#form_step2_ecotax"),
+                    new_ecotax = jQuery("#{{ form.ecotax_taxincl.vars.id }}"),
+                    ps_priceTaxExcl = jQuery("#form_step2_price");
+                    ps_priceTaxIncl = jQuery("#form_step2_price_ttc");
+                ps_ecotax.closest('.input-group').parent().hide();
+                ps_ecotax.val(new_ecotax.val());
+                new_ecotax.on('change',function(){
+                    ps_ecotax.val(jQuery(this).val());
+                    //ps_ecotax.attr('value',jQuery(this).val());
+                    ps_ecotax.trigger('keyup');
+                    //ps_prixTaxIncl.val(ps_priceTaxExcl.val() + )
+                });
+            </script>
+        </div>
+    </div>
+</div>
